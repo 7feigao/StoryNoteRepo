@@ -4,5 +4,19 @@ tags:
 grammar_cjkRuby: true
 ---
 
+## Spark 配置
 
-欢迎使用 **{小书匠}(xiaoshujiang)编辑器**，您可以通过 `小书匠主按钮>模板` 里的模板管理来改变新建文章的内容。
+### [修改端口](https://blog.csdn.net/qq839177306/article/details/78727072)
+
+1. cd SPARK_HOME/sbin
+2. vi start-master.sh
+3. 定位到下面部分内容：
+
+		``` bash
+		if [ "$SPARK_MASTER_WEBUI_PORT" = "" ]; then
+
+		  SPARK_MASTER_WEBUI_PORT=8080
+
+		fi
+		```
+
