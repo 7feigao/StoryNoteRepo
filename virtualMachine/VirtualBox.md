@@ -1,6 +1,6 @@
 ---
 title: VirtualBox
-tags: 新建,模板,小书匠
+tags: 
 grammar_cjkRuby: true
 ---
 
