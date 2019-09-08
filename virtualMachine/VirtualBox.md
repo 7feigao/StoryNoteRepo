@@ -28,4 +28,14 @@ cd /mnt/cdrom
 ```
 5. 在工具栏里的[设备]—[设置共享文件夹] 设置一个自己需要的文件夹。
 ![enter description here](./images/1567934502503.png)
-6. 在虚拟机`/mnt/cdrom/`文件夹下，发现挂载成功。
+6. 执行`reboot`,重启后发现挂载成功,在虚拟机`/mnt/cdrom/`文件夹下，发现挂载成功。
+7. 其他可能会用到的命令。
+
+``` 
+创建文件夹
+mkdir /mnt/vboxshare
+挂载共享文件夹
+mount -t vboxsf tempshare /mnt/vboxshare/
+下面是卸载操作
+umount -f /mnt/vboxshare
+```
