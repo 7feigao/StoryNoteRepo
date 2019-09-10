@@ -24,3 +24,12 @@ firewall-cmd --zone=public --query-port=80/tcp
 
 firewall-cmd --zone=public --remove-port=80/tcp --permanent
 ```
+
+
+### 组操作
+
+##### 将用户添加到某一个组
+
+``` javascript
+chgrp <user> <group>
+```
