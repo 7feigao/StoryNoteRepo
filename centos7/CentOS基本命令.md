@@ -30,6 +30,6 @@ firewall-cmd --zone=public --remove-port=80/tcp --permanent
 
 ##### 将用户添加到某一个组
 
-``` javascript
+``` shell
 chgrp <user> <group>
 ```
