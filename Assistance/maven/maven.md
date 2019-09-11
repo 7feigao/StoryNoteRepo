@@ -208,3 +208,20 @@ grammar_cjkRuby: true
 
 </project>
 ```
+
+
+### Centos7下配置maven
+1. 下载maven包：http://maven.apache.org/download.cgi?Preferred=http%3A%2F%2Fmirrors.tuna.tsinghua.edu.cn%2Fapache%2F
+	![enter description here](./images/1568212103705.png)
+2. 安装步骤：
+
+``` javascript
+mkdir -p /home/root/maven
+cp /mnt/E/apache-maven-3.6.2-bin.tar.gz /home/root/maven/
+cd /home/root/maven/
+tar -zxvf /home/root/maven/apache-maven-3.6.2-bin.tar.gz
+echo "export MAVEN_HOME=/home/root/maven/apache-maven-3.6.2/">>/etc/profile
+echo 'export PATH=$PATH:$MAVEN_HOME/bin' >>/etc/profile
+source /etc/profile
+mvn -v
+```
