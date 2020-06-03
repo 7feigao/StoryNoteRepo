@@ -1,6 +1,6 @@
 ---
 title: 使用docker部署本地gitlab服务器
-tags: 新建,模板,小书匠
+tags: gitlab,docker,server
 grammar_cjkRuby: true
 ---
 
