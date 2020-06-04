@@ -9,7 +9,7 @@ grammar_cjkRuby: true
 1. 标准库定义了四个IO对象：
 	* 标准输入(cin)
 	* 标准输出(cout)
-	* 标准错误（cerr）
+	* 标准错误（cerr）:默认情况下，写入到cerr中的数据是不缓冲的。
 	* clog
 
 ```c++
@@ -73,3 +73,20 @@ return 0;
 	* 执行循环体
 	* 执行累加操作
 	* 跳转到第二步
+
+### 1.4.3 读取不确定数量的数字
+```cpp
+   #include<iostream>
+int main(){
+int a;
+while(std::cin>>a){
+        std::cout<<"intput is "<<a<<std::endl;
+}
+std::cout<<"finished input"<<std::endl;
+return 0;
+}
+```
+> 在Linux系统中，使用`Ctrl+D`来输入文件结束符。
+> 在Windows系统中，使用`Ctrl+Z`来输入文件结束符。
+
+1. 编译器：编译器可以用于帮助检查形式上的错误。
