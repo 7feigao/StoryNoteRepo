@@ -225,3 +225,38 @@ echo 'export PATH=$PATH:$MAVEN_HOME/bin' >>/etc/profile
 source /etc/profile
 mvn -v
 ```
+
+### Q&A
+
+#### No main class set in JAR
+```
+Exception in thread "main" org.apache.spark.SparkException: No main class set in JAR; please specify one with --class
+        at org.apache.spark.deploy.SparkSubmitArguments.error(SparkSubmitArguments.scala:657)
+        at org.apache.spark.deploy.SparkSubmitArguments.validateSubmitArguments(SparkSubmitArguments.scala:266)
+        at org.apache.spark.deploy.SparkSubmitArguments.validateArguments(SparkSubmitArguments.scala:251)
+        at org.apache.spark.deploy.SparkSubmitArguments.<init>(SparkSubmitArguments.scala:120)
+        at org.apache.spark.deploy.SparkSubmit$$anon$2$$anon$1.<init>(SparkSubmit.scala:907)
+        at org.apache.spark.deploy.SparkSubmit$$anon$2.parseArguments(SparkSubmit.scala:907)
+```
+
+1. add maven-jar-plugin 并指出main class的位置。
+
+```xml
+  <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>2.4</version>
+            <configuration>
+                <archive>
+                    <index>true</index>
+                    <manifest>
+                        <mainClass><main class path, eg: com.sample.Main></mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+```
