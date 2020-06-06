@@ -89,6 +89,7 @@ print "%d lines" % sc.textFile(sys.argv[1]).count()
 ### 提交一个java spark应用
 
 1. 构建一个Java maven项目: https://github.com/7feigao/csv246_hw0
+	* 单词计数应用：https://github.com/7feigao/csv246_hw0/tree/cs_246_hw0_section4_words_count
 2. 在有`pom.xml`的folder下执行`mvn clean package`生成Jar包。
 3. 提交并执行生成的jar包:
 
