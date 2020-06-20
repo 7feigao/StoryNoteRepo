@@ -44,12 +44,12 @@ docker run --rm -t -i -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/git
 ---|---|---|---
 CI_COMMIT_TAG|9.0|0.5|commit tag名，只有当按照tag构建的时候出现。
 
-### .gitlab-ci.yml
-1. `Jobs` 是`.gitlab-ci.yml`中最基本的元素。
+## [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/)
+1. [`Jobs`](https://docs.gitlab.com/ee/ci/yaml/) 是`.gitlab-ci.yml`中最基本的元素。
 	* `Jobs`中包含了在何种条件下执行的有限状态。
 	* yml中的顶层元素，可以任意命名，并且必须包含`script`子元素。
 	* Job定义的数量不受限。
-最简单的yml文件：
+最简单的yml文件,定义了两个job，并且会并行执行，互不干扰：
 ```yml
 job1:
   script: "execute-script-for-job1"
@@ -57,3 +57,32 @@ job1:
 job2:
   script: "execute-script-for-job2"
 ```
+
+2. Job可以被任意命名，但是有些保留关键字不能被用作job名。
+	| 关键字|
+	|--|
+	| image|
+	| services|
+	| stages|
+	| types|
+	| before_scipt|
+	| after_script|
+	| variables|
+	| cache|
+	| include|
+	
+
+### [Config 中的参数](https://docs.gitlab.com/ee/ci/yaml/#configuration-parameters)
+| 参数| 描述|
+|---|---|
+| script| Runner要执行的shell script|
+| image| 使用docker 镜像，也可以使用image:name and image:entrypoint.|
+| services| 使用docker服务镜像，也可以使用：services:name, services:alias, services:entrypoint, and services:command
+| before_script| 定义一组在执行job之前执行的一组命令，将会覆盖默认命令。|
+| after_script| 定义一组在执行job之后执行的一组命令，将会覆盖默认的命令。|
+| stage| 定义执行job的阶段，默认阶段为`test`|
+| only| 定义在何种情况下创建并执行job|
+| excep| 定义在何种情况下不创建执行job|
+
+
+#### `stage`定义在每一个job中，并且依赖于全局定义的`stages`,  使用`stage`可以对不同的job
