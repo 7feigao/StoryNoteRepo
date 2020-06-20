@@ -8,7 +8,11 @@ grammar_cjkRuby: true
 ##### VirtualBox 在centos7上安装增强功能并共享文件夹
 https://www.cnblogs.com/Reyzal/p/5509249.html
 
-1. 
+
+``` javascript
+yum install update;yum install kernel-headers;yum install kernel-devel;yum install gcc* ;yum install make
+```
+
 ``` shell
 yum install update
 yum install kernel-headers
@@ -28,7 +32,7 @@ cd /mnt/cdrom
 ```
 5. 在工具栏里的[设备]—[设置共享文件夹] 设置一个自己需要的文件夹。
 ![enter description here](./images/1567934502503.png)
-6. 执行`reboot`,重启后发现挂载成功,在虚拟机`/mnt/cdrom/`文件夹下，发现挂载成功。
+6. 点击确认后，在/mnt/cdrom/文件夹下，可发现挂载成功。
 7. 其他可能会用到的命令。
 
 ``` 
