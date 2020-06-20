@@ -19,3 +19,4 @@ docker run --detach --hostname gitlab.example.com --publish 443:443 --publish 80
 3. 输入运行docker服务器的网址查看到如下界面。
 
 ![enter description here](https://raw.githubusercontent.com/110011010/StoryNoteRepo/master/StoryNoteImg/1591198922836.png_3)
+
