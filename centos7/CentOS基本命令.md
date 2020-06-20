@@ -35,3 +35,4 @@ chgrp <user> <group>
 ```
 
 
+## 修改host名字
