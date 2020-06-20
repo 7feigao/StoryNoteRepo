@@ -3,7 +3,7 @@ title: 2020-6-4未命名文件
 tags: 新建,模板,小书匠
 grammar_cjkRuby: true
 ---
-
+[TOC]
 ## Chapter 1
 ### 1.2
 1. 标准库定义了四个IO对象：
